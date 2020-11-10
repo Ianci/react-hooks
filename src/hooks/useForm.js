@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-const useForm =() => {
-    const [ values, setValues ] = useState({
-        name: "", email: "", password: ""
-    })
+const useForm =( initialState = {} ) => {
+    const [ values, setValues ] = useState(initialState)
 
-    
-    return {
-        values
+    const handleInputChange = ({ target }) => {
+        setValues({
+            ...values,
+            [target.name] : target.value
+        })
     }
+    return [ values, handleInputChange];
 }
 
 export default useForm;
