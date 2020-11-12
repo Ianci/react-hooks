@@ -1,7 +1,7 @@
 import React from 'react';
 import useForm from '../../hooks/useForm'
 const Form = () => {
-    const [ values, handleInputChange] = useForm({
+    const [ values, handleInputChange ] = useForm({
         name: '', email: '', password: ''
     })
 
